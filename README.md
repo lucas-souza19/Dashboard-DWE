@@ -41,7 +41,7 @@ O Dashboard é uma aplicação web com um painel principal, contendo gráficos e
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto no [GitHub.io](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761).
+Você pode visualizar o layout do projeto no [GitHub.io](https://lucas-souza19.github.io/Dashboard-DWE/).
 
 ## ✍🏾 Autor
 
