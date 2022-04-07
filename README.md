@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <p align="center">
   <img alt="IF Dashboard" src="images/if_icon.png" width="10%" =>
 </p>
@@ -57,8 +56,3 @@ Contate-me:
 
 ---
 
-
-=======
-# Dashboard-DWE
-Projeto para a matéria de Desenvolvimento Web do 5° semestre de TADS no IFSP.
->>>>>>> df3327bd49f4eff50c798a011e5bd900c97b7190
