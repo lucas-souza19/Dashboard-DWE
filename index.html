@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DWE</title>
+
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside id="teste">
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/if_icon.png" alt="IFSP">
+                    <h2>IF<span class="erro">SP</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html" class="ativo">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="contato.html">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Contato</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Add Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Sair</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <h1>Dashboard</h1>
+
+            <div class="data">
+                <input type="date">
+            </div>
+
+            <div class="destaques">
+                <div class="vendas">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Total de Vendas</h3>
+                            <h1 id="vendas">R$27,70</h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DAS VENDAS ---------- -->
+
+                <div class="compras">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Total de Compras</h3>
+                            <h1 id="compras">R$14,50</h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>68%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DAS COMPRAS ---------- -->
+
+                <div class="lucro">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Lucro Total</h3>
+                            <h1 id="retorno_lucro"></h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>48%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DOS LUCROS  ---------- -->
+            </div>
+            <!-- --------- FIM DOS DESTAQUES  ---------- -->
+
+            <div class="pedidos-recentes">
+                <h2>Pedidos Recentes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome do Produto</th>
+                            <th>Nº do Produto</th>
+                            <th>Pagamento</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                <a href="#">Exibir Tudo</a>
+            </div>
+        </main>
+        <!-- --------- FIM DA MAIN  ---------- -->
+
+        <div class="direita">
+            <div class="topo">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="alterar-tema">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="perfil">
+                    <div class="info">
+                        <p>Olá, <b>Lucas</b></p>
+                        <small class="legenda">Admin</small>
+                    </div>
+                    <div class="foto-perfil">
+                        <img src="./images/if_icon.png" alt="IFSP">
+                    </div>
+                </div>
+            </div>
+            <!-- --------- FIM DO TOPO  ---------- -->
+
+            <div class="atualizacoes-recentes">
+                <h2>Atualizações Recentes</h2>
+                <div class="atualizacoes">
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Ronald Almeida</b> recebeu o pedido de Samsung Galaxy S22.</p>
+                            <small class="legenda">2 Minutos Atrás</small>
+                        </div>
+                    </div>
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Ivan Cardoso</b> realizou a compra de Notebook Acer Nitro 5.</p>
+                            <small class="legenda">5 Minutos Atrás</small>
+                        </div>
+                    </div>
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Vyctor Gonçalves</b> realizou a compra de PC da Xuxa.</p>
+                            <small class="legenda">10 Minutos Atrás</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- --------- FIM DAS ATUALIZAÇÕES RECENTES  ---------- -->
+
+            <div class="analise-vendas">
+                <h2>Análise de Vendas</h2>
+                <div class="item online">
+                    <div class="icon">
+                        <span class="material-icons-sharp">shopping_cart</span>
+                    </div>
+                    <div class="direita">
+                        <div class="info">
+                            <h3>PEDIDOS ATIVOS</h3>
+                            <small class="legenda">Últimas 24h</small>
+                        </div>
+                        <h5 class="sucesso">+39%</h5>
+                        <h3>5678</h3>
+                    </div>
+                </div>
+                <div class="item offline">
+                    <div class="icon">
+                        <span class="material-icons-sharp">local_mall</span>
+                    </div>
+                    <div class="direita">
+                        <div class="info">
+                            <h3>PEDIDOS INATIVOS</h3>
+                            <small class="legenda">Últimas 24h</small>
+                        </div>
+                        <h5 class="alerta">-13%</h5>
+                        <h3>3524</h3>
+                    </div>
+                </div>
+                <div class="item clientes">
+                    <div class="icon">
+                        <span class="material-icons-sharp">person</span>
+                    </div>
+                    <div class="direita">
+                        <div class="info">
+                            <h3>NOVOS CLIENTES</h3>
+                            <small class="legenda">Últimas 24h</small>
+                        </div>
+                        <h5 class="sucesso">+30%</h5>
+                        <h3>112</h3>
+                    </div>
+                </div>
+                <div class="item adicionar-produtos">
+                    <div>
+                        <span class="material-icons-sharp">add</span>
+                        <h3>Adicionar Produtos</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <p>
+                    <strong>Desenvolvido por Lucas Santos Souza</strong>
+                </p>
+                <ul class="redes-sociais">
+                    <li>
+                        <a href="https://www.linkedin.com/in/lucas-souza19" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                alt="Linkedin" />
+                            <p>Linkedin</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lucas-souza19" target="_blank">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                alt="GitHub" />
+                            <p>GitHub</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:lucassouzacps19@gmail.com" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"
+                                alt="Gmail" />
+                            <p>Gmail</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

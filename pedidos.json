@@ -1,0 +1,35 @@
+[
+    {
+        "nomeProduto": "Samsung Galaxy S22",
+        "numeroProduto": "85631",
+        "statusPagamento": "Processando",
+        "envio": "Pendente"
+    }, 
+    {
+        "nomeProduto": "PC da XUXA",
+        "numeroProduto": "36378",
+        "statusPagamento": "Reembolsado",
+        "envio": "Devolvido"
+    }, 
+    {
+        "nomeProduto": "Monitor LG 29",
+        "numeroProduto": "49347",
+        "statusPagamento": "Processando",
+        "envio": "Pendente"
+    }, {
+        "nomeProduto": "Nike Air Max 90",
+        "numeroProduto": "96996",
+        "statusPagamento": "Pago",
+        "envio": "Enviado"
+    }, {
+        "nomeProduto": "Notebook Acer Nitro 5",
+        "numeroProduto": "96996",
+        "statusPagamento": "Processando",
+        "envio": "Pendente"
+    }, {
+        "nomeProduto": "Geladeira Consul 455L",
+        "numeroProduto": "96996",
+        "statusPagamento": "Pago",
+        "envio": "Pendente"
+    }
+]

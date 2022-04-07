@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - DWE</title>
+
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
+
+    <!-- ESTILOS -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <aside id="teste">
+            <div class="top">
+                <div class="logo">
+                    <img src="./images/if_icon.png" alt="IFSP">
+                    <h2>IF<span class="erro">SP</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="index.html">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+                <a href="contato.html" class="ativo">
+                    <span class="material-icons-sharp">mail_outline</span>
+                    <h3>Contato</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">add</span>
+                    <h3>Add Item</h3>
+                </a>
+                <a href="#">
+                    <span class="material-icons-sharp">logout</span>
+                    <h3>Sair</h3>
+                </a>
+            </div>
+        </aside>
+        <main>
+            <h1>Contato</h1>
+
+            <div class="formulario">
+
+                <div class="principal">
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Assunto:</h3>
+                            <input type="text" required>
+                            <h3>Nome Completo:</h3>
+                            <input type="text" required>
+                            <h3>Email:</h3>
+                            <input type="text" required>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comentarios">
+                    <h2>Comentarios:</h2>
+                    <textarea name="comentarios" id="comentarios"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="item enviar_form">
+                Enviar
+                <span class="material-icons-sharp">send</span>
+            </button>
+        </main>
+        <!-- --------- FIM DA MAIN  ---------- -->
+
+        <div class="direita">
+            <div class="topo">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="alterar-tema">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+                <div class="perfil">
+                    <div class="info">
+                        <p>Olá, <b>Lucas</b></p>
+                        <small class="legenda">Admin</small>
+                    </div>
+                    <div class="foto-perfil">
+                        <img src="./images/if_icon.png" alt="IFSP">
+                    </div>
+                </div>
+            </div>
+            <!-- --------- FIM DO TOPO  ---------- -->
+
+            <div class="atualizacoes-recentes">
+                <h2>Atendimento</h2>
+                <div class="atualizacoes">
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Email:</b> cra@ifsp.edu.br</p>
+                        </div>
+                    </div>
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Telefone:</b> +55 (19) 0000-0000</p>
+                        </div>
+                    </div>
+                    <div class="atualizacao">
+                        <div class="foto-perfil">
+                            <img src="./images/if_icon.png" alt="IFSP">
+                        </div>
+                        <div class="mensagem">
+                            <p><b>Endereco:</b> Rua Heitor Lacerda Guedes, 1000.</p>
+                            <small class="legenda">Satelite Iris, Campinas-SP</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- --------- FIM DAS ATUALIZAÇÕES RECENTES  ---------- -->
+
+
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <nav>
+                <p>
+                    <strong>Desenvolvido por Lucas Santos Souza</strong>
+                </p>
+                <ul class="redes-sociais">
+                    <li>
+                        <a href="https://www.linkedin.com/in/lucas-souza19" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
+                                alt="Linkedin" />
+                            <p>Linkedin</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/lucas-souza19" target="_blank">
+                            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                                alt="GitHub" />
+                            <p>GitHub</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:lucassouzacps19@gmail.com" target="_blank">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg"
+                                alt="Gmail" />
+                            <p>Gmail</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </footer>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
