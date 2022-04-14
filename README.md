@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 341bae7ea23bc40a3ef94d15bc08f8c00fe7c84e
 <p align="center">
   <img alt="IF Dashboard" src="images/if_icon.png" width="10%" =>
 </p>
@@ -45,11 +41,7 @@ O Dashboard é uma aplicação web com um painel principal, contendo gráficos e
 
 ## 🔖 Layout
 
-<<<<<<< HEAD
 Você pode visualizar o layout do projeto no [GitHub.io](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761).
-=======
-Você pode visualizar o layout do projeto no [GitHub.io](https://lucas-souza19.github.io/Dashboard-DWE/).
->>>>>>> 341bae7ea23bc40a3ef94d15bc08f8c00fe7c84e
 
 ## ✍🏾 Autor
 
@@ -63,9 +55,3 @@ Contate-me:
 [![Gmail Badge](https://img.shields.io/badge/-Gmail-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mailto:lucassouzacps19@gmail.com)](mailto:lucassouzacps19@gmail.com)
 
 ---
-
-<<<<<<< HEAD
-
-=======
-=======
->>>>>>> 341bae7ea23bc40a3ef94d15bc08f8c00fe7c84e
