@@ -702,6 +702,10 @@ input[type="text"]{
         padding: 0 1rem;
     }
 
+    main .formulario {
+        grid-template-columns: 1fr;
+    }
+
     main .pedidos-recentes {
         position: relative;
         margin: 3rem 0 0 0;
@@ -711,6 +715,10 @@ input[type="text"]{
     main .pedidos-recentes table {
         width: 100%;
         margin: 0;
+    }
+
+    .formulario input{
+        width: 100%;
     }
 
     .direita {
