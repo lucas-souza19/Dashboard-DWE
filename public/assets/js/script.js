@@ -21,18 +21,8 @@ aleteraTema.addEventListener('click', () => {
     aleteraTema.querySelector('span:nth-child(2)').classList.toggle('active');
 });
 
-// ATUALIZAR LUCRO
-document.addEventListener('DOMContentLoaded', function (evento) {
-    var vendas = document.getElementById('vendas').textContent.replace("R$", "")
-    var compras = document.getElementById('compras').textContent.replace("R$", "")
-    var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.')
-
-    document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",")
-});
-
 // INSERIR PEDIDOS NA TABELA
 $.getJSON('pedidos.json', function (pedido) {
-    debugger
     pedido.forEach(pedido => {
         const tr = document.createElement('tr');
         const trConteudo = `<td>${pedido.nomeProduto}</td>
