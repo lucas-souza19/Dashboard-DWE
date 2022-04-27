@@ -33,11 +33,11 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="graficos.html">
+                <a href="graficos.html"  class="ativo">
                     <span class="material-icons-sharp">insights</span>
                     <h3>Gráficos</h3>
                 </a>
-                <a href="contato.html" class="ativo">
+                <a href="contato.html">
                     <span class="material-icons-sharp">mail_outline</span>
                     <h3>Contato</h3>
                 </a>
@@ -48,34 +48,19 @@
             </div>
         </aside>
         <main>
-            <h1>Contato</h1>
+            <h1>Dashboard</h1>
 
-            <div class="formulario">
-
-                <div class="principal">
-                    <div class="centro">
-                        <div class="esquerda">
-                            <h3>Assunto:</h3>
-                            <input type="text" required>
-                            <h3>Nome Completo:</h3>
-                            <input type="text" required>
-                            <h3>Email:</h3>
-                            <input type="text" required>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div class="comentarios">
-                    <h2>Comentarios:</h2>
-                    <textarea name="comentarios" id="comentarios"></textarea>
-                </div>
+            <div class="data">
+                <input type="date">
             </div>
 
-            <button type="submit" class="item enviar_form">
-                Enviar
-                <span class="material-icons-sharp">send</span>
-            </button>
+            <div class="teste">
+                <div id="chart_div" class="thumb-image grafico"></div>
+                <div id="chart_div2" class="thumb-image grafico"></div>
+                <div id="chart_div3" class="thumb-image grafico"></div>
+            </div>
+
+            <!-- --------- FIM DOS DESTAQUES  ---------- -->
         </main>
         <!-- --------- FIM DA MAIN  ---------- -->
 
@@ -131,8 +116,6 @@
                 </div>
             </div>
             <!-- --------- FIM DAS ATUALIZAÇÕES RECENTES  ---------- -->
-
-
         </div>
     </div>
 
@@ -171,6 +154,90 @@
     </footer>
 
     <script src="../js/script.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+
+        function drawChart() {
+            debugger
+            // GRÁFICO COLUNAS
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Mês');
+            data.addColumn('number', 'Vendas');
+
+            data.addRows(
+                [
+                    ['Janeiro', 78],
+                    ['Fevereiro', 178],
+                    ['Março', 147],
+                    ['Abril', 566],
+                ]
+            );
+
+            var options = {
+                'title': 'Vendas por Mês - 2022',
+                // width: $(window).width() * 0.15,
+                // height: $(window).height() * 0.15,
+                colors: ['#e33214', '#e33214']
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+
+            // GRÁFICO PIZZA
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Resposta');
+            data.addColumn('number', 'Número');
+
+            data.addRows(
+                [
+                    ['Atingiram', 78],
+                    ['Náo Atingiram', 178]
+                ]
+            );
+
+            var options = {
+                'title': 'Porcentagem - Meses que atingiram a meta',
+                // width: $(window).width() * 0.15,
+                // height: $(window).height() * 0.15,
+                colors: ['#3366CC', '#e33214'],
+                is3D: true
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+
+            // GRÁFICO LINHAS
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Ano');
+            data.addColumn('number', 'Despesas');
+            data.addColumn('number', 'Receitas');
+
+            data.addRows(
+                [
+                    ['2018', 10000, 4700],
+                    ['2019', 11700, 5600],
+                    ['2020', 6900, 11200],
+                    ['2021', 7800, 6300],
+                ]
+            );
+
+            var options = {
+                'title': 'Balanço Financeiro Anual',
+                // width: $(window).width() * 0.15,
+                // height: $(window).height() * 0.15
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+            chart.draw(data, options);
+        }
+    </script>
 </body>
 
 </html>

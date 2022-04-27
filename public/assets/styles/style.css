@@ -254,6 +254,22 @@ main .destaques {
     gap: 1.6rem;
 }
 
+main .teste {
+    display: flex !important;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin: 1rem auto;
+    align-items: center;
+    justify-content: center;
+}
+
+main .grafico>div{
+    min-height: 500px;
+    align-items: center;
+    justify-content: center;
+    display: flex !important;
+}
+
 main .formulario {
     display: grid !important;
     grid-template-columns: 1fr 2fr;
@@ -261,7 +277,8 @@ main .formulario {
 }
 
 main .destaques>div,
-main .formulario>div {
+main .formulario>div,
+main .grafico>div {
     background: var(--cor-branca);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
@@ -271,7 +288,8 @@ main .formulario>div {
 }
 
 main .destaques>div:hover,
-main .formulario>di:hover {
+main .formulario>di:hover,
+main .teste>div:hover {
     box-shadow: none;
 }
 

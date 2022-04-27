@@ -10,9 +10,6 @@
     <!-- MATERIAL ICONS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-1.6.4.js"></script>
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <!-- ESTILOS -->
     <link rel="stylesheet" href="./assets/styles/style.css">
@@ -36,13 +33,13 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
+                <a href="./assets/views/graficos.html">
+                    <span class="material-icons-sharp">insights</span>
+                    <h3>Gráficos</h3>
+                </a>
                 <a href="./assets/views/contato.html">
                     <span class="material-icons-sharp">mail_outline</span>
                     <h3>Contato</h3>
-                </a>
-                <a href="#">
-                    <span class="material-icons-sharp">add</span>
-                    <h3>Add Item</h3>
                 </a>
                 <a href="#">
                     <span class="material-icons-sharp">logout</span>
@@ -57,12 +54,67 @@
                 <input type="date">
             </div>
 
-            <div class="teste">
-                <div id="chart_div" class="thumb-image"></div>
-                <div id="chart_div2" class="thumb-image"></div>
-                <div id="chart_div3" class="thumb-image"></div>
-            </div>
+            <div class="destaques">
+                <div class="vendas">
+                    <span class="material-icons-sharp">analytics</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Total de Vendas</h3>
+                            <h1 id="vendas">R$27,70</h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>81%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DAS VENDAS ---------- -->
 
+                <div class="compras">
+                    <span class="material-icons-sharp">bar_chart</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Total de Compras</h3>
+                            <h1 id="compras">R$14,50</h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>68%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DAS COMPRAS ---------- -->
+
+                <div class="lucro">
+                    <span class="material-icons-sharp">stacked_line_chart</span>
+                    <div class="centro">
+                        <div class="esquerda">
+                            <h3>Lucro Total</h3>
+                            <h1 id="retorno_lucro"></h1>
+                        </div>
+                        <div class="progresso">
+                            <svg>
+                                <circle cx="38" cy="38" r="36"></circle>
+                            </svg>
+                            <div class="numero">
+                                <p>48%</p>
+                            </div>
+                        </div>
+                    </div>
+                    <small class="legenda">Últimas 24h</small>
+                </div>
+                <!-- --------- FIM DOS LUCROS  ---------- -->
+            </div>
             <!-- --------- FIM DOS DESTAQUES  ---------- -->
 
             <div class="pedidos-recentes">
@@ -226,92 +278,7 @@
         </div>
     </footer>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./assets/js/script.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {
-            'packages': ['corechart']
-        });
-
-        google.charts.setOnLoadCallback(drawChart);
-
-
-        function drawChart() {
-            debugger
-            // GRÁFICO COLUNAS
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Mês');
-            data.addColumn('number', 'Vendas');
-
-            data.addRows(
-                [
-                    ['Janeiro', 78],
-                    ['Fevereiro', 178],
-                    ['Março', 147],
-                    ['Abril', 566],
-                    ['Maio', 187],
-                    ['Junho', 338],
-                ]
-            );
-
-            var options = {
-                'title': 'Vendas por Mês',
-                'width': 500,
-                'height': 350,
-                colors: ['#3366CC', '#DC3912']
-            };
-
-            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-            chart.draw(data, options);
-
-
-            // GRÁFICO PIZZA
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Resposta');
-            data.addColumn('number', 'Número');
-
-            data.addRows(
-                [
-                    ['Sim', 78],
-                    ['Sim em vermelho', 178]
-                ]
-            );
-
-            var options = {
-                'title': 'Você gosta do Boteco Digital?',
-                'width': 500,
-                'height': 350,
-                colors: ['#3366CC', '#DC3912']
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
-            chart.draw(data, options);
-
-            // GRÁFICO LINHAS
-            var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Ano');
-            data.addColumn('number', 'Despesas');
-            data.addColumn('number', 'Receitas');
-
-            data.addRows(
-                [
-                    ['2016', 1000, 470],
-                    ['2017', 1170, 560],
-                    ['2018', 690, 1120],
-                    ['2019', 780, 630],
-                ]
-            );
-
-            var options = {
-                'title': 'Fluxo',
-                'width': 500,
-                'height': 350
-            };
-
-            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
-            chart.draw(data, options);
-        }
-    </script>
 </body>
 
 </html>
