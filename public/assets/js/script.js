@@ -16,18 +16,19 @@ closeBtn.addEventListener('click', () => {
 // ALTERAR TEMA
 aleteraTema.addEventListener('click', () => {
     document.body.classList.toggle('modo-escuro-variaveis');
-
     aleteraTema.querySelector('span:nth-child(1)').classList.toggle('active');
     aleteraTema.querySelector('span:nth-child(2)').classList.toggle('active');
 });
 
 // ATUALIZAR LUCRO
 document.addEventListener('DOMContentLoaded', function (evento) {
-    var vendas = document.getElementById('vendas').textContent.replace("R$", "")
-    var compras = document.getElementById('compras').textContent.replace("R$", "")
-    var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.')
-
-    document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",")
+    if (document.getElementById('vendas')) {
+        var vendas = document.getElementById('vendas').textContent.replace("R$", "")
+        var compras = document.getElementById('compras').textContent.replace("R$", "")
+        var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.')
+    
+        document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",")
+    }
 });
 
 // INSERIR PEDIDOS NA TABELA

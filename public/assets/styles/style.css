@@ -288,7 +288,7 @@ main .grafico>div {
 }
 
 main .destaques>div:hover,
-main .formulario>di:hover,
+main .formulario>div:hover,
 main .teste>div:hover {
     box-shadow: none;
 }
@@ -794,6 +794,15 @@ input[type="text"]{
     --cor-clara: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--cor-clara);
 }
+
+rect[x='0']{
+    fill: var(--cor-branca);
+}
+
+g text{
+    fill: var(--cor-escura);
+}
+
 
 * {
     margin: 0;
