@@ -23,11 +23,14 @@ aleteraTema.addEventListener('click', () => {
 // ATUALIZAR LUCRO
 document.addEventListener('DOMContentLoaded', function (evento) {
     if (document.getElementById('vendas')) {
-        var vendas = document.getElementById('vendas').textContent.replace("R$", "")
-        var compras = document.getElementById('compras').textContent.replace("R$", "")
-        var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.')
+        debugger
+        var vendas = document.getElementById('vendas').textContent.replace("R$", "");
+        var compras = document.getElementById('compras').textContent.replace("R$", "");
+        var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.');
+        var porcent = eval('(('+ vendas.replace(',', '.') + '/' + compras.replace(',', '.') +') * 100) - 100').toFixed(0).replace(".", ",");
     
-        document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",")
+        document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",");
+        document.getElementById('porcentagem_lucro').textContent = porcent + "%";
     }
 });
 
