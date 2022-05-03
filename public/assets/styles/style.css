@@ -289,11 +289,7 @@ main .grafico>div {
 
 main .destaques>div:hover,
 main .formulario>div:hover,
-<<<<<<< HEAD
-main .teste>div:hover {
-=======
 main .grafico>div:hover {
->>>>>>> 25d2d93 (Adicionando Firebase)
     box-shadow: none;
 }
 

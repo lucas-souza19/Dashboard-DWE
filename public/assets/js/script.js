@@ -23,33 +23,55 @@ aleteraTema.addEventListener('click', () => {
 // ATUALIZAR LUCRO
 document.addEventListener('DOMContentLoaded', function (evento) {
     if (document.getElementById('vendas')) {
-        debugger
         var vendas = document.getElementById('vendas').textContent.replace("R$", "");
         var compras = document.getElementById('compras').textContent.replace("R$", "");
         var calculo = vendas.replace(',', '.') + ' - ' + compras.replace(',', '.');
-        var porcent = eval('(('+ vendas.replace(',', '.') + '/' + compras.replace(',', '.') +') * 100) - 100').toFixed(0).replace(".", ",");
-    
+        var porcent = eval('((' + vendas.replace(',', '.') + '/' + compras.replace(',', '.') + ') * 100) - 100').toFixed(0).replace(".", ",");
+
         document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",");
         document.getElementById('porcentagem_lucro').textContent = porcent + "%";
     }
 });
 
 // INSERIR PEDIDOS NA TABELA
-$.getJSON('pedidos.json', function (pedido) {
-    debugger
-    pedido.forEach(pedido => {
-        const tr = document.createElement('tr');
-        const trConteudo = `<td>${pedido.nomeProduto}</td>
-                        <td>${pedido.numeroProduto}</td>
-                        <td>${pedido.statusPagamento}</td>
-                        <td class="${pedido.envio === 'Devolvido' ? 'erro' 
-                        : pedido.envio === 'Pendente' ? 'alerta' 
-                        : pedido.envio === 'Enviado' ? 'sucesso'
-                        : 'primaria'}">${pedido.envio}</td>
-                        <td class="primaria">Detalhes</td>`
+function pedidosJson() {
+    let url = "https://dashboard-dwe2-default-rtdb.firebaseio.com/Pedidos.json";
 
-        tr.innerHTML = trConteudo;
+    fetch(url).then(response => response.json())
+        .then(pedidos => {
+            createTable(pedidos);
+        });
+}
+
+function createTable(pedidos) {
+    debugger
+    pedidos.forEach(pedidos => {
+        let tr = document.createElement('tr');
+
+        let td1 = document.createElement('td');
+        td1.textContent = pedidos.nomeProduto;
+
+        tr.append(td1);
+
+        let td2 = document.createElement('td');
+        td2.textContent = pedidos.statusPagamento;
+
+        tr.append(td2);
+
+        let td3 = document.createElement('td');
+        td3.textContent = pedidos.envio;
+        td3.classList = pedidos.envio === 'Devolvido' ? 'erro' : pedidos.envio === 'Pendente' ? 'alerta' : pedidos.envio === 'Enviado' ? 'sucesso' : 'primaria'
+
+        tr.append(td3);
+
+        let td4 = document.createElement('td');
+        td4.textContent = "Detalhes";
+        td4.classList = "primaria"
+
+        tr.append(td4);
+
         document.querySelector('table tbody').appendChild(tr);
     });
+}
 
-});
+pedidosJson();
