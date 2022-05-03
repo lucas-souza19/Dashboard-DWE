@@ -34,17 +34,17 @@ document.addEventListener('DOMContentLoaded', function (evento) {
 });
 
 // INSERIR PEDIDOS NA TABELA
-function pedidosJson() {
+(function pedidosJson() {
     let url = "https://dashboard-dwe2-default-rtdb.firebaseio.com/Pedidos.json";
 
     fetch(url).then(response => response.json())
         .then(pedidos => {
             createTable(pedidos);
         });
-}
+})();
 
 function createTable(pedidos) {
-    debugger
+    
     pedidos.forEach(pedidos => {
         let tr = document.createElement('tr');
 
