@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="IF Dashboard" src="images/if_icon.png" width="10%" =>
+  <img alt="IF Dashboard" src="images/if_icon.png" width="10%">
 </p>
 
 <br>
