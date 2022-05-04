@@ -271,7 +271,7 @@ main .grafico>div{
 }
 
 main .formulario {
-    display: grid !important;
+    display: flex !important;
     grid-template-columns: 1fr 2fr;
     gap: 1.6rem;
 }
@@ -285,6 +285,22 @@ main .grafico>div {
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+}
+
+main .formulario>div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2% 10%;
+    align-items: center;
+}
+
+main .formulario>div>div{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 2% 10%;
+    align-items: center;
 }
 
 main .destaques>div:hover,
@@ -340,24 +356,19 @@ main .destaques svg circle {
     stroke-width: 14;
     stroke-linecap: round;
     transform: translate(5px, 5px);
-    stroke-dasharray: 110;
-    stroke-dashoffset: 92;
-}
-
-main .destaques .vendas svg circle {
-    stroke-dashoffset: -30;
-    stroke-dasharray: 200;
-}
-
-main .destaques .compras svg circle {
-    stroke-dashoffset: 20;
-    stroke-dasharray: 80;
 }
 
 main .destaques .lucro svg circle {
-    stroke-dashoffset: 35;
-    stroke-dasharray: 110;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 1000;
+  animation: dash 5s linear forwards;
 }
+
+@keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
 
 main .destaques .progresso .numero {
     position: absolute;
@@ -402,7 +413,7 @@ main .comentarios textarea{
     background: transparent;
     color: var(--cor-escura);
     width: 100%;
-    height: 80%;
+    height: 200px;
     resize: none;
     border: 1px solid var(--cor-escura-variante);
     padding: 1rem;
@@ -733,10 +744,6 @@ input[type="text"]{
     main .pedidos-recentes table {
         width: 100%;
         margin: 0;
-    }
-
-    .formulario input{
-        width: 100%;
     }
 
     .direita {
