@@ -17,7 +17,7 @@
 ## 👨🏾‍💻 Instalar  
 
 - Instale o [Visual Studio Code](https://code.visualstudio.com/).
-- Baixe o [Zip do código](https://github.com/lucas-souza19/Dashboard-DWE/tree/master).
+- Baixe o [Zip do código](https://github.com/lucas-souza19/dashboard_dwe/tree/master).
 - Descompacte o arquivo e abra no VS Code.
 - Instale a extensão Live Share.
 - Clique na tecla "F1" e na box aberta digite "Open with Live Share".
@@ -43,7 +43,7 @@ O Dashboard é uma aplicação web com um painel principal, contendo gráficos e
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto no [GitHub.io](https://lucas-souza19.github.io/Dashboard-DWE/public/).
+Você pode visualizar o layout do projeto no [GitHub.io](https://lucas-souza19.github.io/dashboard_dwe/public/).
 
 ## ✍🏾 Autor
 
