@@ -299,6 +299,7 @@ main .formulario>div>div{
     width: 100%;
     justify-content: space-between;
     padding: 2% 10%;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -330,10 +331,6 @@ main .destaques>div .centro {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-main .formulario>div .centro {
-    gap: 2rem;
 }
 
 main .destaques h3,
