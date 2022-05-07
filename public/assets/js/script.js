@@ -112,7 +112,7 @@ function createAtt(pessoas, pedidos) {
         div2.classList.add("foto-perfil");
 
         let img = document.createElement('img');
-        img.setAttribute('src', '../images/if_icon.png');
+        img.setAttribute('src', './assets/images/if_icon.png');
         div2.append(img);
 
         div1.append(div2);
