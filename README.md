@@ -25,23 +25,25 @@
 - Ótimo, o projeto está funcionando!
 
 
-
 ## 🚀 Tecnologias
 
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
-- [HTML]
-- [CSS]
+- [VSCode]
+- [HTML5]
+- [CSS3]
 - [JavaScript]
-
-
+- [FireBase]
+- [Git]
+- [ChartsJs]
+  
 ## 💻 Projeto
 
-O Dashboard é uma aplicação web com um painel principal, contendo gráficos e informações dinâmicas, além de uma página de contato. 
+O Dashboard é uma aplicação web com um painel principal, contendo gráficos e informações dinâmicas, além de uma página de contato. Desenvolvido para a matéria de desenvolvimento web do 5° semestre do curso de TADS do IFSP. 
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto no [GitHub.io](https://www.figma.com/file/UwFEntsHpHYJlHNQAQr4gA/Podcastr?node-id=160%3A2761).
+Você pode visualizar o layout do projeto no [GitHub.io]().
 
 ## ✍🏾 Autor
 

@@ -33,10 +33,6 @@
                     <span class="material-icons-sharp">grid_view</span>
                     <h3>Dashboard</h3>
                 </a>
-                <a href="./assets/views/graficos.html">
-                    <span class="material-icons-sharp">insights</span>
-                    <h3>Gráficos</h3>
-                </a>
                 <a href="./assets/views/contato.html">
                     <span class="material-icons-sharp">mail_outline</span>
                     <h3>Contato</h3>
@@ -50,17 +46,13 @@
         <main>
             <h1>Dashboard</h1>
 
-            <div class="data">
-                <input type="date">
-            </div>
-
             <div class="destaques">
                 <div class="vendas">
                     <span class="material-icons-sharp">analytics</span>
                     <div class="centro">
                         <div class="esquerda">
                             <h3>Total de Vendas</h3>
-                            <h1 id="vendas">R$2790,70</h1>
+                            <h1 id="vendas">R$2590,70</h1>
                         </div>
                     </div>
                     <small class="legenda">Últimas 24h</small>
@@ -88,7 +80,7 @@
                         </div>
                         <div class="progresso">
                             <svg>
-                                <circle cx="38" cy="38" r="36"></circle>
+                                <circle cx="40" cy="40" r="48"></circle>
                             </svg>
                             <div class="numero">
                                 <p id="porcentagem_lucro"></p>
@@ -100,6 +92,24 @@
                 <!-- --------- FIM DOS LUCROS  ---------- -->
             </div>
             <!-- --------- FIM DOS DESTAQUES  ---------- -->
+
+            <br>
+            <h1>Gráficos</h1>
+
+            <div class="teste">
+
+                <div class="chart-container grafico">
+                    <canvas id="lucro_mes"></canvas>
+                </div>
+
+                <div class="chart-container grafico">
+                    <canvas id="metas_mes"></canvas>
+                </div>
+
+                <!-- <div class="chart-container grafico">
+                    <canvas id="balanco_ano"></canvas>
+                </div> -->
+            </div>
 
             <div class="pedidos-recentes">
                 <h2>Pedidos Recentes</h2>
@@ -263,8 +273,6 @@
     </footer>
 
     <script src="./assets/js/script.js"></script>
-<<<<<<< HEAD
-=======
     <script src="./assets/js/firebase.js"></script>
     <script type="module">
         // Import the functions you need from the SDKs you need
@@ -285,7 +293,192 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
       </script>
->>>>>>> 25d2d93 (Adicionando Firebase)
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script>
+        const g_lucro_mes = document.getElementById('lucro_mes').getContext('2d');
+        const g_metas_mes = document.getElementById('metas_mes').getContext('2d');
+        // const g_balanco_ano = document.getElementById('balanco_ano').getContext('2d');
+
+        const lucro_mes = new Chart(g_lucro_mes, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                datasets: [{
+                    label: 'Lucro por mês',
+                    data: [12000, 19000, 23000, 15000, 22000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        const metas_mes = new Chart(g_metas_mes, {
+            type: 'line',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+                datasets: [{
+                    label: 'Metas por mês',
+                    data: [15000, 23000, 15000, 20000, 13000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        // const balanco_ano = new Chart(g_balanco_ano, {
+        //     type: 'polarArea',
+        //     data: {
+        //         labels: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio'],
+        //         datasets: [{
+        //             label: 'Balanço Financeiro',
+        //             data: [12, 19, 3, 5, 2],
+        //             backgroundColor: [
+        //                 'rgba(255, 99, 132, 0.2)',
+        //                 'rgba(54, 162, 235, 0.2)',
+        //                 'rgba(255, 206, 86, 0.2)',
+        //                 'rgba(75, 192, 192, 0.2)',
+        //                 'rgba(153, 102, 255, 0.2)'
+        //             ],
+        //             borderColor: [
+        //                 'rgba(255, 99, 132, 1)',
+        //                 'rgba(54, 162, 235, 1)',
+        //                 'rgba(255, 206, 86, 1)',
+        //                 'rgba(75, 192, 192, 1)',
+        //                 'rgba(153, 102, 255, 1)'
+        //             ],
+        //             borderWidth: 1
+        //         }]
+        //     },
+        //     options: {
+        //         scales: {
+        //             y: {
+        //                 beginAtZero: true
+        //             }
+        //         }
+        //     }
+        // });
+    </script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['corechart']
+        });
+
+        google.charts.setOnLoadCallback(drawChart);
+
+
+        function drawChart() {
+            // GRÁFICO COLUNAS
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Mês');
+            data.addColumn('number', 'Vendas');
+
+            data.addRows(
+                [
+                    ['Janeiro', 78],
+                    ['Fevereiro', 178],
+                    ['Março', 147],
+                    ['Abril', 566],
+                ]
+            );
+
+            var options = {
+                'title': 'Vendas por Mês - 2022',
+                width: $(window).width() * 0.2,
+                height: $(window).height() * 0.2,
+                colors: ['#e33214', '#e33214'],
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+
+
+            // GRÁFICO PIZZA
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Resposta');
+            data.addColumn('number', 'Número');
+
+            data.addRows(
+                [
+                    ['Atingiram', 78],
+                    ['Não Atingiram', 178]
+                ]
+            );
+
+            var options = {
+                'title': 'Porcentagem - Meses que atingiram a meta',
+                width: $(window).width() * 0.2,
+                height: $(window).height() * 0.2,
+                colors: ['#3366CC', '#e33214'],
+                is3D: true
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+
+            // GRÁFICO LINHAS
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'Ano');
+            data.addColumn('number', 'Receitas');
+            data.addColumn('number', 'Despesas');
+
+            data.addRows(
+                [
+                    ['2018', 10000, 4700],
+                    ['2019', 11700, 5600],
+                    ['2020', 6900, 11200],
+                    ['2021', 7800, 6300],
+                ]
+            );
+
+            var options = {
+                'title': 'Balanço Financeiro Anual',
+                width: $(window).width() * 0.2,
+                height: $(window).height() * 0.2,
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+            chart.draw(data, options);
+        }
+    </script>
 </body>
 
 </html>

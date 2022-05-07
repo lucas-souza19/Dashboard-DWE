@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function (evento) {
 
         document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",");
         document.getElementById('porcentagem_lucro').textContent = porcent + "%";
+        debugger
+
+        var x =  (315 * porcent) / 100;
+        x = 315 - parseInt(x);
+        $('circle').attr('stroke-dashoffset', x);
     }
 });
 
@@ -72,21 +77,26 @@ function createTable(pedidos) {
         tr.append(td1);
 
         let td2 = document.createElement('td');
-        td2.textContent = pedidos[i].statusPagamento;
+        td2.textContent = pedidos[i].numeroProduto;
 
         tr.append(td2);
 
         let td3 = document.createElement('td');
-        td3.textContent = pedidos[i].envio;
-        td3.classList = pedidos[i].envio === 'Devolvido' ? 'erro' : pedidos[i].envio === 'Pendente' ? 'alerta' : pedidos[i].envio === 'Enviado' ? 'sucesso' : 'primaria'
+        td3.textContent = pedidos[i].statusPagamento;
 
         tr.append(td3);
 
         let td4 = document.createElement('td');
-        td4.textContent = "Detalhes";
-        td4.classList = "primaria"
+        td4.textContent = pedidos[i].envio;
+        td4.classList = pedidos[i].envio === 'Devolvido' ? 'erro' : pedidos[i].envio === 'Pendente' ? 'alerta' : pedidos[i].envio === 'Enviado' ? 'sucesso' : 'primaria'
 
         tr.append(td4);
+
+        let td5 = document.createElement('td');
+        td5.textContent = "Detalhes";
+        td5.classList = "primaria"
+
+        tr.append(td5);
 
         document.querySelector('table tbody').appendChild(tr);
     };
@@ -96,7 +106,6 @@ function createTable(pedidos) {
 function createAtt(pessoas, pedidos) {
 
     for (let i = 0; i < pessoas.length; i++) {
-        debugger
         let div1 = document.createElement('div');
         div1.classList.add("atualizacao");
 

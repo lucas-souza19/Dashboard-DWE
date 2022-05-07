@@ -248,26 +248,17 @@ main .data input[type="date"] {
     color: var(--cor-escura);
 }
 
+
 main .destaques {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.6rem;
+    grid-gap: 1.6rem;
 }
 
-main .teste {
-    display: flex !important;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin: 1rem auto;
-    align-items: center;
-    justify-content: center;
-}
-
-main .grafico>div{
-    min-height: 500px;
-    align-items: center;
-    justify-content: center;
-    display: flex !important;
+main .teste{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(400px, 1fr)); 
+    grid-gap: 1.6rem;
 }
 
 main .formulario {
@@ -276,15 +267,23 @@ main .formulario {
     gap: 1.6rem;
 }
 
+main .grafico{
+    position: relative;
+}
+
 main .destaques>div,
 main .formulario>div,
-main .grafico>div {
+main .grafico>canvas {
     background: var(--cor-branca);
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-top: 1rem;
     box-shadow: var(--box-shadow);
     transition: all 300ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 main .formulario>div{
@@ -305,7 +304,7 @@ main .formulario>div>div{
 
 main .destaques>div:hover,
 main .formulario>div:hover,
-main .grafico>div:hover {
+main .grafico>canvas:hover {
     box-shadow: none;
 }
 
@@ -316,6 +315,7 @@ main .formulario>div span {
     border-radius: 50%;
     color: var(--cor-branca);
     font-size: 2rem;
+    max-width: 40px;
 }
 
 main .destaques>div .compras span {
@@ -340,35 +340,38 @@ main .formulario h3 {
 
 main .destaques .progresso {
     position: relative;
-    width: 92px;
-    height: 92px;
+    width: 150px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
     border-radius: 50%;
-}
-
-main .destaques svg {
-    width: 7rem;
-    height: 7rem;
 }
 
 main .destaques svg circle {
     fill: none;
     stroke: var(--cor-primaria);
-    stroke-width: 14;
+    stroke-width: 15;
     stroke-linecap: round;
-    transform: translate(5px, 5px);
+    transform: translate(35px, 20px);
 }
+
+/* main .destaques svg circle::after {
+    content: " ";
+    background: var(--cor-clara);
+    width: 100px;
+    height: 100px;
+    position: absolute;
+} */
 
 main .destaques .lucro svg circle {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 1000;
-  animation: dash 5s linear forwards;
+    stroke-dasharray: 315;
 }
 
-@keyframes dash {
+/* @keyframes dash {
     to {
       stroke-dashoffset: 0;
     }
-  }
+  } */
 
 main .destaques .progresso .numero {
     position: absolute;
@@ -590,7 +593,7 @@ main .pedidos-recentes a {
     width: 10rem;
 }
 
-input[type="text"]{
+input[type="text"], select{
     background: transparent;
     color: var(--cor-escura);
     border-radius: 1rem;
@@ -598,6 +601,12 @@ input[type="text"]{
     margin: 5px;
     padding: 10px;
     border: 1px solid var(--cor-escura-variante);
+    width: 100%;
+}
+
+select{
+    padding: 0 10px;
+    font-weight: 600;
 }
 
 .direita .analise-vendas .adicionar-produtos:hover,
@@ -643,7 +652,8 @@ input[type="text"]{
         margin-top: 1.8rem;
     }
 
-    main .destaques {
+    main .destaques,
+    main .teste {
         grid-template-columns: 1fr;
         gap: 0;
     }
@@ -658,16 +668,6 @@ input[type="text"]{
 
     main .pedidos-recentes table {
         width: 83vw;
-    }
-
-    main table thead tr th:last-child,
-    main table thead tr th:first-child {
-        display: none;
-    }
-
-    main table tbody tr td:last-child,
-    main table tbody tr td:first-child {
-        display: none;
     }
 
 }
@@ -787,6 +787,16 @@ input[type="text"]{
 
     .direita .topo button span {
         font-size: 2rem;
+    }
+
+    main table thead tr th:last-child,
+    main table thead tr th:first-child {
+        display: none;
+    }
+
+    main table tbody tr td:last-child,
+    main table tbody tr td:first-child {
+        display: none;
     }
 
 }
