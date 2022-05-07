@@ -332,6 +332,10 @@ main .destaques>div .centro {
     justify-content: space-between;
 }
 
+main .formulario>div .centro {
+    gap: 2rem;
+}
+
 main .destaques h3,
 main .formulario h3 {
     margin: 1rem 0 0 0.6rem;

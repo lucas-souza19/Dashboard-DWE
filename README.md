@@ -43,7 +43,7 @@ O Dashboard é uma aplicação web com um painel principal, contendo gráficos e
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto no [GitHub.io]().
+Você pode visualizar o layout do projeto no [GitHub.io](https://lucas-souza19.github.io/Dashboard-DWE/public/).
 
 ## ✍🏾 Autor
 
