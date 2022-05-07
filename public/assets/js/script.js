@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function (evento) {
 
         document.getElementById('retorno_lucro').textContent = "R$" + eval(calculo).toFixed(2).replace(".", ",");
         document.getElementById('porcentagem_lucro').textContent = porcent + "%";
-        debugger
 
         var x =  (315 * porcent) / 100;
         x = 315 - parseInt(x);
