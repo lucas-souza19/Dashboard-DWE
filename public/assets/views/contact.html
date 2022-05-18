@@ -95,7 +95,7 @@
                     <span class="material-icons-sharp active">light_mode</span>
                     <span class="material-icons-sharp">dark_mode</span>
                 </div>
-                <div class="perfil">
+                <div class="perfil" onclick="botoesHeader('perfil')">
                     <div class="info">
                         <p>Olá, <b>Lucas</b></p>
                         <small class="legenda">Admin</small>
@@ -104,7 +104,42 @@
                         <img src="../images/if_icon.png" alt="IFSP">
                     </div>
                 </div>
+                <div class="container_info opcoes_perfil" id="opcoes_perfil">
+                    <div class="info_perfil">
+                        <div class="img">
+                            <img class="text-center" src="../images/if_icon.png">
+                        </div>
+                        <div class="usuario">
+                            <p><b class="legenda">Admin</b></p>
+                            <p>Lucas Santos Souza</p>
+                            <p class="legenda">Gerente de Projetos</p>
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <div title="Perfil" class="opcao">
+                            <span class="material-icons-sharp">
+                                manage_accounts
+                            </span>
+                            Perfil
+                        </div>
+    
+                        <div title="Configurações" class="opcao">
+                            <span class="material-icons-sharp">
+                                settings
+                            </span>
+                            Configurações
+                        </div>
+    
+                    </div>
+                    <div class="encerrar_sessao">
+                        <div title="Sair do Sistema" class="opcao" id="logoutButton">
+                            <h3>Logout</h3>
+                            <span class="material-icons-sharp">logout</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
             <!-- --------- FIM DO TOPO  ---------- -->
 
             <div class="atualizacoes-recentes">
