@@ -1,0 +1,17 @@
+
+main .grafico {
+    position: relative;
+}
+
+select {
+    padding: 0 10px;
+    font-weight: 600;
+}
+
+rect[x='0'] {
+    fill: var(--cor-branca);
+}
+
+g text {
+    fill: var(--cor-escura);
+}

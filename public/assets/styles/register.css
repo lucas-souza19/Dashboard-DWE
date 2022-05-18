@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register{
+    margin: 15% auto 0 auto;
+    background: var(--cor-branca);
+    padding: var(--card-padding);
+    border-radius: var(--card-border-radius);
+    margin-top: 1rem;
+    box-shadow: var(--box-shadow);
+    transition: all 300ms ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.register .img{
+    margin-bottom: 3rem;
+}
+
+.register img{
+    min-width: 100px;
+    margin: auto;
+    max-width: 100px;
+    border: 5px solid var(--cor-branca);
+    box-shadow: var(--box-shadow);
+    border-radius: 50%;
+}
+
+.register .dados_register{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.register .dados_register input{
+    border-radius: 5px;
+    padding: 0.5rem;
+    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    box-shadow: var(--box-shadow);
+}
+
+.register .dados_register h3{
+   font-weight: 800;
+   font-size: 17px;
+   color: var(--cor-escura);
+}
+
+.register .dados_register a.register,
+.register .dados_register button{
+   margin-top: 2rem;
+   color: var(--cor-escura);
+   font-weight: 800;
+   font-size: 20px;
+   background: transparent;
+   border: 3px solid var(--cor-escura);
+   border-radius: 50px;
+   padding: 0.5rem;
+   transition: all 400ms ease;
+   text-decoration: none;
+   display: flex;
+   justify-content: center;
+   width: 100%;
+}
+
+.register .dados_register a.login{
+   color: var(--cor-primaria);
+   padding: 0.5rem;
+   display: flex;
+   width: 100%;
+   justify-content: center;
+}
+
+.register .dados_register a.register:hover,
+.register .dados_register button:hover{
+   background: var(--cor-fundo);
+
+}

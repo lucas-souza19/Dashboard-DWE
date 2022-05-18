@@ -62,8 +62,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     })();
 })
 
-
-
 function createTable(pedidos) {
 
     for (let i = 0; i < pedidos.length; i++) {
@@ -101,7 +99,6 @@ function createTable(pedidos) {
     };
 }
 
-
 function createAtt(pessoas, pedidos) {
 
     for (let i = 0; i < pessoas.length; i++) {
@@ -112,7 +109,7 @@ function createAtt(pessoas, pedidos) {
         div2.classList.add("foto-perfil");
 
         let img = document.createElement('img');
-        img.setAttribute('src', './assets/images/if_icon.png');
+        img.setAttribute('src', '../images/if_icon.png');
         div2.append(img);
 
         div1.append(div2);
@@ -135,5 +132,30 @@ function createAtt(pessoas, pedidos) {
         if (i > 2) {    
             break;
         }
+    }
+}
+
+function botoesHeader(action) {
+    switch (action) {
+        case 'perfil':
+
+            var box_aberta = false;
+            exibir = true;
+
+            if (document.getElementById('opcoes_perfil').style.display === 'block') {
+                box_aberta = true;
+                exibir = false;
+            }
+
+            document.getElementById('opcoes_perfil').style.display = 'block'
+
+            if (box_aberta === true) {
+                document.getElementById('opcoes_perfil').style.display = 'none';
+            }
+
+            break;
+
+        default:
+            break;
     }
 }
