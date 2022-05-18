@@ -1,15 +1,13 @@
-var btnLogin = document.getElementById('btnLogin');
-var btnCreateAccount = document.getElementById('btnCreateAccount');
+var loginButton = document.getElementById('loginButton');
 
-btnLogin.addEventListener('click', function () {
-    var email = document.getElementById('email');
-    var password = document.getElementById('password');
+loginButton.addEventListener('click', function () {
+    var email = document.getElementById('user');
+    var password = document.getElementById('senha');
 
     firebase.auth().signInWithEmailAndPassword(email.value, password.value)
     .then((userCredential) => {
-        // var user = userCredential.user;
         alert("Login efetuado");
-        window.location.href = "logged.html";
+        window.location.href = "./assets/views/dashboard.html";
     })
     .catch((error) => {
         var errorCode = error.code;
@@ -18,8 +16,4 @@ btnLogin.addEventListener('click', function () {
         console.log("Código de erro", errorCode);
         alert(errorMessage);
     });
-});
-
-btnCreateAccount.addEventListener('click', function () {
-    window.location.href = "register.html";
 });

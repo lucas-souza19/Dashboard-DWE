@@ -17,18 +17,18 @@
 		</div>
 		<div class="dados_register">
 			<div class="user">
-				<h3>Usuário</h3>
-				<input type="text" id="user">
+				<h3>Email</h3>
+				<input type="email" id="user_r">
 			</div>
 			<div class="senha">
 				<h3>Senha</h3>
-				<input type="text" id="senha">
+				<input type="password" id="senha_r">
 			</div>
 			<div class="senha">
 				<h3>Confirmar Senha</h3>
-				<input type="text" id="senha">
+				<input type="password" id="senha_rc">
 			</div>
-			<a class="register" href="../views/dashboard.html">
+			<a class="register" id="registerButton">
 				Cadastrar
 			</a>
 			<a class="login" href="/public/index.html">
@@ -38,7 +38,10 @@
 	</main>
 
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
-    <script src="../js/configure.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/authentication.js"></script>
     <script src="../js/register.js"></script>
+
 </body>
 </html>

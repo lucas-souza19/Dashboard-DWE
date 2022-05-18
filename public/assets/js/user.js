@@ -1,64 +1,38 @@
-let btnCharge = document.getElementById('btnCharge');
-let btnLogout = document.getElementById('btnLogout');
-let btnDeleteAccount = document.getElementById('btnDeleteAccount');
+let logoutButton = document.getElementById('logoutButton');
 
-setTimeout(chargeUser, 3000);
-
-btnLogout.addEventListener('click', function () {
+logoutButton.addEventListener('click', function () {
     firebase.auth().signOut()
     .then(() => {
         alert("Usuário deslogado!");
-        window.location.href = "index.html";
+        window.location.href = "/public/index.html";
     })
     .catch((error) => {
         console.log(error);
     });
 });
 
-btnDeleteAccount.addEventListener('click', function () {
-    const user = firebase.auth().currentUser;
-    console.log(user.email);
+function faleConosco() {
+    var assunto = document.getElementById('assunto_c').value;
+    var nome = document.getElementById('nome_c').value;
+    var email_user = document.getElementById('email_c').value;
+    var telefone = document.getElementById('tel_c').value;
+    var cep = document.getElementById('cep_c').value;
+    var tipo = document.getElementById('tipo_c').value;
+    var comentario = document.getElementById('comentarios_c').value;
 
-    firebase.firestore().collection("users").doc(user.email).delete().then(() => {
-        console.log("Deletado do BD");
-        
-        firebase.auth().currentUser.delete().then(function() {
-            alert("Usuário deletado!");
-            window.location.href = "index.html";
-        }).catch(function(error) {
-            alert(error);
-        });
-        
-    }).catch((error) => {
-        console.error("Erro BD: ", error);
-    });
+    var data = {
+        assunto: assunto,
+        nome: nome,
+        email: email_user,
+        telefone: telefone,
+        cep: cep,
+        tipo: tipo,
+        comentario: comentario
+    }
 
-
-});
-
-btnCharge.addEventListener('click', function () {
-    chargeUser();
-});
-
-function chargeUser() {
-    const user = firebase.auth().currentUser;
-    console.log(user.email);
-
-    firebase.firestore().collection("users").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            if(doc.id == user.email) {
-                let divUser = document.getElementById('userData');
-                divUser.innerText = '';
-
-                let h1 = document.createElement('h1');
-                let h2 = document.createElement('h2');
-    
-                h1.innerHTML = doc.data().name;
-                h2.innerHTML = doc.data().age;
-    
-                divUser.appendChild(h1);
-                divUser.appendChild(h2)
-            }
-        });
+    firebase.firestore().collection("users").doc(email_user).set(data)
+    .then(() => {
+        alert('Contato registrado com sucesso!');
+        window.location.href = "./dashboard.html";
     });
 }

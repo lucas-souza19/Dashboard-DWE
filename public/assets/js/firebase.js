@@ -1,13 +1,13 @@
 (function() {
   const firebaseConfig = {
-    apiKey: "AIzaSyB_m6SGLxQ3nKVhW1wRVYHH6ZF1uC3vye0",
-    authDomain: "dashboard-dwe.firebaseapp.com",
-    projectId: "dashboard-dwe",
-    databaseURL: "https://dashboard-dwe.firebaseio.com",
-    storageBucket: "dashboard-dwe.appspot.com",
-    messagingSenderId: "216025900452",
-    appId: "1:216025900452:web:5faf473c79c2092f99cd31"
+    apiKey: "AIzaSyCU_6Eg2SaMx9MxnwzLRZnMIUQuNUx1G70",
+    authDomain: "dashboard-dwe2.firebaseapp.com",
+    databaseURL: "https://dashboard-dwe2-default-rtdb.firebaseio.com",
+    projectId: "dashboard-dwe2",
+    storageBucket: "dashboard-dwe2.appspot.com",
+    messagingSenderId: "779161712680",
+    appId: "1:779161712680:web:d03bf5079f284293e35d1d"
   };
   
-  firebase.initializeApp(config);
+  firebase.initializeApp(firebaseConfig);
 })();

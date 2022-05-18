@@ -1,20 +1,17 @@
-var btnCreate = document.getElementById('btnCreate');
-var btnLogin = document.getElementById('btnLogin');
+var registerButton = document.getElementById('registerButton');
 
-btnCreate.addEventListener('click', function () {
-    const email = document.getElementById('inputEmail');
-    const password = document.getElementById('inputPassword');
-    const confirmePassword = document.getElementById('inputConmfirmePassword');
-    const inputName = document.getElementById('inputName');
-    const inputAge = document.getElementById('inputAge');
+registerButton.addEventListener('click', function () {
+    const email = document.getElementById('user_r');
+    const password = document.getElementById('senha_r');
+    const confirmePassword = document.getElementById('senha_rc');
 
-    if(email.value != '' && password.value != '' && confirmePassword.value != '' && inputName.value != '' && inputAge.value != '') {
+    if(email.value != '' && password.value != '' && confirmePassword.value != '') {
         if(password.value === confirmePassword.value) {
             firebase.auth().createUserWithEmailAndPassword(email.value, password.value)
             .then((userCredential) => {
                 var user = userCredential.user;
-                saveDataUser(email.value, inputName.value, inputAge.value);
                 alert('Usuário criado com sucesso!');
+                window.location.href = "../views/dashboard.html";
             })
             .catch((error) => {
                 var errorCode = error.code;
@@ -30,19 +27,3 @@ btnCreate.addEventListener('click', function () {
         alert('Preencha todos os campos!');
     }
 });
-
-btnLogin.addEventListener('click', function () {
-    window.location.href = "index.html";
-});
-
-function saveDataUser(emailValue, nameValue, ageValue) {
-    var data = {
-        name: nameValue,
-        age: ageValue
-    }
-
-    firebase.firestore().collection("users").doc(emailValue).set(data)
-    .then(() => {
-        window.location.href = "logged.html";
-    });
-}

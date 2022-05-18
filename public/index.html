@@ -23,14 +23,14 @@
 		</div>
 		<div class="dados_login">
 			<div class="user">
-				<h3>Usuário</h3>
-				<input type="text" id="user">
+				<h3>Email</h3>
+				<input type="email" id="user">
 			</div>
 			<div class="senha">
 				<h3>Senha</h3>
-				<input type="text" id="senha">
+				<input type="password" id="senha">
 			</div>
-			<a class="login" href="./assets/views/dashboard.html">
+			<a class="login" id="loginButton">
 				Login
 			</a>
 			<a class="register" href="./assets/views/register.html">
@@ -39,9 +39,10 @@
 		</div>
 	</main>
 
-    <script src="../js/script.js"></script>
-    <script src="../js/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/firebase.js"></script>
+    <script src="./assets/js/authentication.js"></script>
 </body>
 
 </html>

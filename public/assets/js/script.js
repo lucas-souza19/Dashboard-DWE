@@ -122,7 +122,7 @@ function createAtt(pessoas, pedidos) {
 
         let small = document.createElement('small');
         small.classList.add('legenda');
-        small.textContent = i + " Minutos Atrás;"
+        small.textContent = (i + 2*i) + " Minutos Atrás;"
         div3.append(small);
 
         div1.append(div3);

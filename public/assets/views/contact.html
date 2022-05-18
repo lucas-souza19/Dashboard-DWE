@@ -50,22 +50,22 @@
                     <div class="centro">
                         <div class="esquerda">
                             <h3>Assunto:</h3>
-                            <input type="text" required>
+                            <input type="text" id="assunto_c" required>
                             <h3>Nome Completo:</h3>
-                            <input type="text" required>
+                            <input type="text" id="nome_c" required>
                             <h3>Email:</h3>
-                            <input type="text" required>
+                            <input type="text" id="email_c" required>
                         </div>
                         <div class="logo">
                             <img src="../images/if_icon.png" alt="IFSP">
                         </div>
                         <div class="direita">
                             <h3>Telefone:</h3>
-                            <input type="text" required>
+                            <input type="text" id="tel_c" required>
                             <h3>CEP:</h3>
-                            <input type="text" required>
+                            <input type="text" id="cep_c" required>
                             <h3>Opção:</h3>
-                            <select name="teste" id="">
+                            <select name="teste" id="tipo_c">
                                 <option value="">Opinião</option>
                                 <option value="">Reclamação</option>
                                 <option value="">Sugestão</option>
@@ -77,9 +77,9 @@
             </div>
             <div class="comentarios">
                 <h2>Comentários:</h2>
-                <textarea name="comentarios" id="comentarios"></textarea>
+                <textarea name="comentarios" id="comentarios_c"></textarea>
             </div>
-            <button type="submit" class="item enviar_form">
+            <button type="submit" class="item enviar_form" onclick="faleConosco()">
                 Enviar
                 <span class="material-icons-sharp">send</span>
             </button>
@@ -177,6 +177,8 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
     <script src="../js/script.js"></script>
     <script src="../js/firebase.js"></script>
+    <script src="../js/authentication.js"></script>
+    <script src="../js/user.js"></script>
 </body>
 
 </html>
