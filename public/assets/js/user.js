@@ -4,7 +4,7 @@ logoutButton.addEventListener('click', function () {
     firebase.auth().signOut()
     .then(() => {
         alert("Usuário deslogado!");
-        window.location.href = "/";
+        window.location.href = "/public/index.html";
     })
     .catch((error) => {
         console.log(error);
